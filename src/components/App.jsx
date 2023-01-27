@@ -16,7 +16,12 @@ export class App extends Component {
     filter: '',
   };
 
-  addContact = (name, number) => {
+  addContact = ({name, number}) => {
+    if (this.isDublicate(name)) {
+      alert(`${name} is already in contacts`); 
+      return false;
+    }
+
     const contact = {
       id: shortid.generate(),
       name,
@@ -32,10 +37,18 @@ export class App extends Component {
     this.setState({ filter: e.target.value });
   };
 
+  isDublicate(newName) {
+    const normaliazedName = newName.toLowerCase();
+    const { contacts } = this.state;
+    const result = contacts.find(({ name }) => {
+      return (name.toLowerCase() === normaliazedName)
+    });
+    return Boolean(result);
+  }
+
   getContacts = () => {
     const { contacts, filter } = this.state;
     const normalizedFilter = filter.toLowerCase();
-    console.log(contacts);
 
     return contacts.filter(contact =>
       contact.name.toLowerCase().includes(normalizedFilter),
