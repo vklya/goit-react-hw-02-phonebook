@@ -9,10 +9,8 @@
 .title {
     width: 70%;
     margin: 0 auto;
-    color: #fff;
+    color: #3a5199;
     margin-bottom: 12px;
-
-    .section:not(:first-child) & {
-        border-bottom: 1px solid #fff;
-    }
+    border-bottom: 1px solid #3a5199;
+    
 }

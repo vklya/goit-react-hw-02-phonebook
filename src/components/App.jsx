@@ -51,7 +51,17 @@ export class App extends Component {
   render() {
     const { filter } = this.state;
     return (
-      <div>
+      <div
+        style={{
+          width: '400px',
+          margin: '30px auto',
+          backgroundColor: '#d5d6d2',
+          color: '#2f2e33',
+          borderRadius: '8px',
+          boxShadow: '0px 0px 8px 6px rgba(199, 199, 199, 1)',
+          padding: '16px 0',
+        }}
+      >
         <Section title="Phonebook">
           <Form onSubmit={this.addContact} />
         </Section>
