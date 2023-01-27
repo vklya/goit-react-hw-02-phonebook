@@ -35,9 +35,10 @@ export class App extends Component {
   getContacts = () => {
     const { contacts, filter } = this.state;
     const normalizedFilter = filter.toLowerCase();
+    console.log(contacts);
 
     return contacts.filter(contact =>
-      contact.name.toLowerCase().includes(normalizedFilter)
+      contact.name.toLowerCase().includes(normalizedFilter),
     );
   };
 
@@ -49,7 +50,6 @@ export class App extends Component {
 
   render() {
     const { filter } = this.state;
-    console.log(this.getContacts());
     return (
       <div>
         <Section title="Phonebook">
