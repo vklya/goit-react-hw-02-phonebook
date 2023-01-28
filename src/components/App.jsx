@@ -4,6 +4,7 @@ import Section from "./Section";
 import Form from './Form';
 import Filter from "./Filter";
 import List from "./List";
+import css from './app.module.scss';
 
 export class App extends Component {
   state = {
@@ -64,17 +65,7 @@ export class App extends Component {
   render() {
     const { filter } = this.state;
     return (
-      <div
-        style={{
-          width: '400px',
-          margin: '30px auto',
-          backgroundColor: '#d5d6d2',
-          color: '#2f2e33',
-          borderRadius: '8px',
-          boxShadow: '0px 0px 8px 6px rgba(199, 199, 199, 1)',
-          padding: '16px 0',
-        }}
-      >
+      <div className={css.div}>
         <Section title="Phonebook">
           <Form onSubmit={this.addContact} />
         </Section>
